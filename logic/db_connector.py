@@ -1,6 +1,7 @@
 import mongodb
 from pymongo import MongoClient
 from dataclasses import dataclass
+from typing import List, Dict
 
 @dataclass
 class MongoConnection:
@@ -14,3 +15,9 @@ class MongoConnection:
 
     def __exit__(self):
         self.client.close()
+
+    # region DB functions
+    def get_config_from_user(self, user: str) -> List[Dict]:
+        # TODO
+        return
+    # endregion
