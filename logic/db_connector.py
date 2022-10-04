@@ -20,4 +20,8 @@ class MongoConnection:
     def get_config_from_user(self, user: str) -> List[Dict]:
         # TODO
         return
+
+    def create_new_config(self, user: str, config: Dict) -> bool:
+        # TODO
+        return
     # endregion
