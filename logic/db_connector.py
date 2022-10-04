@@ -1,4 +1,5 @@
 import mongodb
+from pymongo import MongoClient
 from dataclasses import dataclass
 
 @dataclass
@@ -6,11 +7,10 @@ class MongoConnection:
     connection_string: str
 
     def __post_init__(self):
-        self.conn = mongodb.MongoConnection(self.connection_string)
-        # TODO add the connection
+        self.client = MongoClient(self.connection_string)
 
     def __enter__(self):
-        return self
+        return self.client
 
     def __exit__(self):
-        self.conn.close()
+        self.client.close()
