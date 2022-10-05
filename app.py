@@ -1,15 +1,13 @@
-from flask import Flask, render_template, session
-from logic import internal_class
-
+from flask import Flask, render_template, session, request
 
 def create_app():
     app = Flask(__name__)
 
     @app.route('/')
-    def hello_world():
-        # This was done to show how to send python objects to the jinja templates.
-        internal = internal_class.ExampleClass()
-        return render_template('index.html', name=internal.name)
+    def login():
+        form = request.form
+        # TODO
+        return render_template('index.html')
 
     if __name__ == '__main__':
         app.run()
