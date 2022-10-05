@@ -1,0 +1,13 @@
+{
+  "user": "test1",
+  "locations": [
+    {
+      "latitude": 0,
+      "longitude": 100
+    },
+    {
+      "latitude": 100,
+      "longitude": 0
+    }
+  ]
+}
