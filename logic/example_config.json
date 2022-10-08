@@ -3,11 +3,13 @@
   "locations": [
     {
       "latitude": 0,
-      "longitude": 100
+      "longitude": 100,
+      "visited": false
     },
     {
       "latitude": 100,
-      "longitude": 0
+      "longitude": 0,
+      "visited": false
     }
   ]
 }
