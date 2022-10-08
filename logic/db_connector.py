@@ -17,6 +17,9 @@ class MongoConnection:
         self.client.close()
 
     # region DB functions
+    def create_user(self, user):
+        # TODO
+        return
     def get_config_from_user(self, user: str) -> List[Dict]:
         # TODO
         return
