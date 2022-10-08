@@ -1,2 +1,5 @@
-.idea
+.idea/
 Backlog.md
+venv/
+misc.xml
+webAppTemplate.iml
