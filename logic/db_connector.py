@@ -3,7 +3,7 @@ from pymongo import MongoClient
 from dataclasses import dataclass
 from typing import List, Dict
 
-@dataclass
+@dataclass()
 class MongoConnection:
     connection_string: str
 
