@@ -11,13 +11,13 @@ class Location:
 class Hunt:
     name: str
     locations: List[Location]
-    current_goal: Location | None
-    current_index: int
+    current_goal: Location = None
+    current_index: int = 0
     threshold: float = 0
 
     def __post_init__(self):
         self.current_index = 0
-        self.current_goal = self.location[self.current_index]
+        self.current_goal = self.locations[self.current_index]
 
     def validate(self) -> bool:
         """ Validates whether the hunt is over or not
@@ -42,17 +42,18 @@ class Hunt:
         # TODO calculate distance between locations
         distance = 0
         if distance < self.threshold:
-            self.locations[current_index].visited = True
+            self.locations[self.current_index].visited = True
             self.current_index += 1
-            self.current_location = self.locations[self.current_index]
+            self.current_goal = self.locations[self.current_index]
             return True
         else:
             return False
+
 
 @dataclass
 class User:
     # region attributes
     name: str
     password: str
-    hunts: Hunt | None
+    hunts: Hunt = None
     # endregion
