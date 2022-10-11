@@ -58,4 +58,11 @@ class User:
     name: str
     password: str
     hunts: Hunt = None
+        
+    def add_hunt(self, new_hunt: Hunt):
+        self.hunts.append(new_hunt)
+        
+   def remove_hunt(self, delete_hunt: Hunt):
+        self.hunts.pop(delete_hunt)
+        
     # endregion
