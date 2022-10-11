@@ -1,4 +1,4 @@
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from typing import List
 
 @dataclass
@@ -7,8 +7,9 @@ class Location:
     longitude: float
     visited: bool = False
 
-@dataclass
+@dataclass(order=True)
 class Hunt:
+    sort_index: str = field(init=False, repr=False)
     name: str
     locations: List[Location]
     current_goal: Location = None
@@ -16,6 +17,7 @@ class Hunt:
     threshold: float = 0
 
     def __post_init__(self):
+        self.sort_index = self.name
         self.current_index = 0
         self.current_goal = self.locations[self.current_index]
 
