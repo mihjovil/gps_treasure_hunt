@@ -4,7 +4,7 @@ from logic.db_connector import MongoConnection
 
 def create_app():
     app = Flask(__name__)
-    app.db = MongoConnection(os.getenv("mongo_string").client)
+    app.db = MongoConnection(os.getenv("MONGO_STRING").client)
 
     @app.route('/')
     def login():
