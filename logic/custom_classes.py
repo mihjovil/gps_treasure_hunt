@@ -1,5 +1,6 @@
 from dataclasses import dataclass, field
 from typing import List
+import geopy.distance
 
 @dataclass
 class Location:
@@ -42,7 +43,9 @@ class Hunt:
         :return: True if the user is at the correct location, False otherwise.
         """
         # TODO calculate distance between locations
-        distance = 0
+        comparison_coordinates = (self.current_goal.latitude, self.current_goal.longitude)
+        query_coordinates = (query_location.latitude, query_location.longitude)
+        distance = geopy.distance.geodesic(comparison_coordinates, query_coordinates).km * 1_000
         if distance < self.threshold:
             self.locations[self.current_index].visited = True
             self.current_index += 1
