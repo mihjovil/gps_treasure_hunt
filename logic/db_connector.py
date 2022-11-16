@@ -20,6 +20,11 @@ class MongoConnection:
     def create_user(self, user):
         # TODO
         return
+    
+    def login(user: str, pswd: str) -> bool:
+        # TODO look for all users and passwords to find a match
+        return False
+    
     def get_config_from_user(self, user: str) -> List[Dict]:
         # TODO
         return
